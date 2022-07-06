@@ -1,5 +1,5 @@
 .header {
-  background-color: #7f713e;
+  background-color: $brown;
 
   &__nav {
     display: flex;
@@ -116,7 +116,7 @@
 
 .header-main.show {
   @media (max-width: 1100px) {
-    background-color: #7f713e;
+    background-color: $brown;
   }
 }
 
@@ -128,7 +128,7 @@
   width: 100%;
   padding-bottom: 16px;
   transform: translateX(120%);
-  background-color: #7f713e;
+  background-color: $brown;
   transition: 0.4s;
 
   &__menu {
