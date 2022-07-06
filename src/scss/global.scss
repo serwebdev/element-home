@@ -1,0 +1,38 @@
+.container {
+  max-width: 1190px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container-fluid {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+body {
+  font-family: 'Tenor Sans', sans-serif;
+  font-weight: 400;
+}
+
+.btn {
+  font-family: 'Tenor Sans', sans-serif;
+  background-color: #f3d5ae;
+  border-radius: 4px;
+  padding: 14px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: #f6c483;
+  }
+}
+
+.h2 {
+  font-size: 32px;
+  line-height: 130%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: $black;
+}

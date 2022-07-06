@@ -1,0 +1,171 @@
+.intro {
+  padding: 248px 0;
+  background-image: url(../img/intro-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @media (max-width: 480px) {
+    background-image: url(../img/intro-bg-mobile.jpg);
+    padding: 245px 0;
+  }
+
+  &__inner {
+    @media (max-width: 500px) {
+      max-width: 324px;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $white;
+    margin-bottom: 16px;
+
+    @media (max-width: 600px) {
+      font-size: 32px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    color: $white;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    max-width: 477px;
+
+    @media (max-width: 600px) {
+      font-size: 16px;
+    }
+    @media (max-width: 350px) {
+      font-size: 14px;
+    }
+  }
+
+  &__btn {
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #513f29;
+    margin: 0 auto;
+  }
+}
+
+// about===========================================================================
+.about {
+  margin-top: 120px;
+
+  @media (max-width: 500px) {
+    margin-top: 64px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+
+    @media (max-width: 950px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__col {
+  }
+  &__col--1 {
+    max-width: 560px;
+
+    @media (max-width: 950px) {
+      order: 1;
+    }
+  }
+  &__img {
+    max-width: 100%;
+  }
+
+  &__col--2 {
+    max-width: 460px;
+
+    @media (max-width: 950px) {
+      max-width: 560px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 42px;
+
+    @media (max-width: 500px) {
+      font-size: 24px;
+      margin-bottom: 23px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 150%;
+    color: $black;
+    margin-top: 33px;
+
+    @media (max-width: 500px) {
+      font-size: 16px;
+      margin-top: 23px;
+    }
+  }
+}
+
+// catalog==============================================================
+.catalog {
+  &__inner {
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+  }
+
+  &__more {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__more-text {
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    color: #7f713e;
+  }
+
+  &__more svg {
+  }
+
+  &__gallery {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 300px);
+    grid-auto-rows: 300px;
+  }
+
+  &__card {
+  }
+
+  &__card-title {
+  }
+
+  &__card-text {
+  }
+
+  &__card-link {
+  }
+}
