@@ -25,6 +25,7 @@
     "sass": "^1.45.1"
   },
   "dependencies": {
+    "inputmask": "^5.0.7",
     "swiper": "^8.3.0"
   }
 }
