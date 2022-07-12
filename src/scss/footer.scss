@@ -1,0 +1,156 @@
+.footer {
+  margin-top: 120px;
+  background-color: $black;
+  min-height: 216px;
+
+  @media (max-width: 700px) {
+    margin-top: 52px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 49px;
+
+    @media (max-width: 1050px) {
+      flex-wrap: wrap;
+      padding: 40px 0;
+    }
+
+    @media (max-width: 550px) {
+      gap: 30px;
+    }
+  }
+
+  &__col {
+    max-width: 220px;
+
+    @media (max-width: 1050px) {
+      max-width: 50%;
+      width: 50%;
+      text-align: center;
+      padding: 0 10px;
+    }
+    @media (max-width: 550px) {
+      max-width: 100%;
+      width: 100%;
+      padding: 0 0px;
+    }
+  }
+  &__col--1 {
+  }
+  &__col--2 {
+  }
+  &__col--3 {
+    max-width: 270px;
+  }
+  &__col--4 {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    @media (max-width: 550px) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 150%;
+    color: $white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__link--2 {
+    @media (max-width: 550px) {
+      font-size: 13px;
+    }
+  }
+
+  &__img-wrap {
+  }
+
+  &__logo {
+    @media (max-width: 1050px) {
+      display: inline-block;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  &__btn {
+    width: 222px;
+    font-size: 16px;
+    line-height: 150%;
+    color: #513f29;
+
+    @media (max-width: 550px) {
+      width: 100%;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__social-link {
+    transition: 0.2s;
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  &__social-img {
+  }
+
+  &__right-text {
+  }
+
+  &__right-text--develop {
+    a {
+      text-decoration: underline;
+      transition: 0.2s;
+
+      &:hover {
+        color: #e3c59e;
+      }
+    }
+  }
+
+  &__copyright,
+  &__right-text--develop,
+  &__right-text--develop a {
+    font-size: 13px;
+    line-height: 150%;
+    color: $white;
+  }
+
+  &__link--address {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 550px) {
+      flex-direction: row;
+      gap: 5px;
+      justify-content: center;
+      text-align: start;
+    }
+
+    span {
+      display: inline-block;
+    }
+  }
+}
