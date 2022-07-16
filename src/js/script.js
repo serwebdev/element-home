@@ -88,18 +88,20 @@
   );
 
   // Открытие модального окна
-  reviewsContent.addEventListener('click', function (e) {
-    if (e.target.closest(selectorCard)) {
-      modal.classList.add('open');
+  if (reviewsContent) {
+    reviewsContent.addEventListener('click', function (e) {
+      if (e.target.closest(selectorCard)) {
+        modal.classList.add('open');
 
-      renderCardModal(e.target.closest(selectorCard));
+        renderCardModal(e.target.closest(selectorCard));
 
-      // Убираем прокрутку с body и добавляем padding-right
-      document.body.style.overflowY = 'hidden';
-      let scrollWidth = document.documentElement.clientWidth - clientWidth;
-      document.body.style.paddingRight = `${scrollWidth}px`;
-    }
-  });
+        // Убираем прокрутку с body и добавляем padding-right
+        document.body.style.overflowY = 'hidden';
+        let scrollWidth = document.documentElement.clientWidth - clientWidth;
+        document.body.style.paddingRight = `${scrollWidth}px`;
+      }
+    });
+  }
 
   // Закрытие модального окна по нажатию на крестик
   closeModal.addEventListener('click', function () {

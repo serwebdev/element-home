@@ -12,6 +12,7 @@ body {
   font-weight: 400;
 }
 
+// btn==================================================================
 .btn {
   font-family: 'Tenor Sans', sans-serif;
   background-color: #f3d5ae;
@@ -36,4 +37,54 @@ body {
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: $black;
+}
+
+// breadcrumb==============================================
+.breadcrumb {
+  margin-top: 32px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    font-size: 16px;
+    line-height: 150%;
+    color: #bfbfbf;
+  }
+
+  &__item + &__item {
+    &::before {
+      content: '/';
+      padding: 0 6px 0 10px;
+      color: $black;
+    }
+  }
+
+  &__link {
+    color: $black;
+    transition: 0.8s;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 0%;
+      height: 1px;
+      background-color: $black;
+      transition: 0.2s;
+    }
+  }
+
+  &__link:hover::after {
+    width: 100%;
+  }
 }

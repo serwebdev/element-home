@@ -130,6 +130,7 @@
   transform: translateX(120%);
   background-color: $brown;
   transition: 0.4s;
+  z-index: 1;
 
   &__menu {
   }
