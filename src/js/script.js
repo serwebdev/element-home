@@ -6,11 +6,11 @@
   headerBurger.addEventListener('click', () => {
     mobileMenu.classList.toggle('show');
     if (mobileMenu.classList.contains('show')) {
-      headerMain.classList.add('show');
+      if (headerMain) headerMain.classList.add('show');
       headerBurger.classList.add('close');
       document.body.style.overflow = 'hidden';
     } else {
-      headerMain.classList.remove('show');
+      if (headerMain) headerMain.classList.remove('show');
       headerBurger.classList.remove('close');
       document.body.style.overflow = '';
     }
@@ -26,32 +26,36 @@
 
 // Валидация формы
 (function () {
-  const designerForm = document.querySelector('.designer__form');
-  const designerInput = document.querySelectorAll('.designer__input');
-  const designerInputEmail = document.querySelector('.designer__input-email');
+  // const designerForm = document.querySelector('.designer__form');
+  const designerForm = document.querySelectorAll('.designer__form');
   const designerInputPhone = document.querySelector('.designer__input-phone');
 
   // Если форма на странице есть
   if (designerForm) {
-    designerForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+    designerForm.forEach(item => {
+      const designerInput = item.querySelectorAll('.designer__input');
+      const designerInputEmail = item.querySelector('.designer__input-email');
 
-      // Пустым инпутам добавляем класс error
-      designerInput.forEach(input => {
-        addClassError(input, input.value);
+      item.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Пустым инпутам добавляем класс error
+        designerInput.forEach(input => {
+          addClassError(input, input.value);
+        });
+        validEmail();
       });
-      validEmail();
-    });
 
-    designerInputEmail.addEventListener('input', function () {
-      validEmail();
-    });
+      designerInputEmail.addEventListener('input', function () {
+        validEmail();
+      });
 
-    // Проверяет на валидность поле email
-    function validEmail() {
-      const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-      addClassError(designerInputEmail, reg.test(designerInputEmail.value));
-    }
+      // Проверяет на валидность поле email
+      function validEmail() {
+        const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+        addClassError(designerInputEmail, reg.test(designerInputEmail.value));
+      }
+    });
 
     // Функция добавляет инпутам класс error, если value равно false
     function addClassError(input, value) {
@@ -104,11 +108,12 @@
   }
 
   // Закрытие модального окна по нажатию на крестик
-  closeModal.addEventListener('click', function () {
-    modal.classList.remove('open');
-
-    scrollShow();
-  });
+  if (closeModal) {
+    closeModal.addEventListener('click', function () {
+      modal.classList.remove('open');
+      scrollShow();
+    });
+  }
 
   // Закрытие модального окна по клику вне окна
   window.addEventListener('click', function (e) {
@@ -126,7 +131,6 @@
 
       scrollShow();
     }
-    console.log(e.key, e.code);
   });
 
   // Выводит нужную карточку в модальном окне
@@ -171,4 +175,116 @@
 
     // console.log(currentCardModal, videoPlay);
   }
+})();
+
+// modal-footer =========================================================================
+(function () {
+  const footerBtn = document.querySelector('.footer__btn');
+  const modalFooter = document.querySelector('.modal-footer');
+  const closeModal = document.querySelector('.modal__btn');
+  // const modalContent = document.querySelector('.modal__content');
+
+  let clientWidth = document.documentElement.clientWidth;
+
+  // Возвращаем прокрутку и убираем padding-right
+  function scrollShow() {
+    document.body.style.overflowY = '';
+    document.body.style.paddingRight = '';
+  }
+
+  // Открытие модального окна
+  if (footerBtn) {
+    footerBtn.addEventListener('click', function (e) {
+      if (modalFooter) {
+        modalFooter.classList.add('open');
+
+        // Убираем прокрутку с body и добавляем padding-right
+        document.body.style.overflowY = 'hidden';
+        let scrollWidth = document.documentElement.clientWidth - clientWidth;
+        document.body.style.paddingRight = `${scrollWidth}px`;
+      }
+    });
+  }
+
+  // Закрытие модального окна по нажатию на крестик
+  if (closeModal) {
+    closeModal.addEventListener('click', function () {
+      modalFooter.classList.remove('open');
+      scrollShow();
+    });
+  }
+
+  // Закрытие модального окна по клику вне окна
+  window.addEventListener('click', function (e) {
+    if (e.target === modalFooter) {
+      modalFooter.classList.remove('open');
+
+      scrollShow();
+    }
+  });
+
+  // Закрытие по нажатию клавиши Esc
+  document.addEventListener('keydown', function (e) {
+    if (e.code === 'Escape') {
+      modalFooter.classList.remove('open');
+
+      scrollShow();
+    }
+  });
+})();
+
+// modal-buying =========================================================================
+(function () {
+  const buyinBtn = document.querySelector('.card-one__right-btn');
+  const modal = document.querySelector('.modal-buying');
+  const closeModal = document.querySelector('.modal__btn');
+  // const modalContent = document.querySelector('.modal__content');
+
+  let clientWidth = document.documentElement.clientWidth;
+
+  // Возвращаем прокрутку и убираем padding-right
+  function scrollShow() {
+    document.body.style.overflowY = '';
+    document.body.style.paddingRight = '';
+  }
+
+  // Открытие модального окна
+  if (buyinBtn) {
+    buyinBtn.addEventListener('click', function (e) {
+      if (modal) {
+        modal.classList.add('open');
+
+        // Убираем прокрутку с body и добавляем padding-right
+        document.body.style.overflowY = 'hidden';
+        let scrollWidth = document.documentElement.clientWidth - clientWidth;
+        document.body.style.paddingRight = `${scrollWidth}px`;
+      }
+    });
+  }
+
+  // Закрытие модального окна по нажатию на крестик
+  if (closeModal) {
+    closeModal.addEventListener('click', function () {
+      modal.classList.remove('open');
+      scrollShow();
+    });
+  }
+
+  // Закрытие модального окна по клику вне окна
+  window.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      modal.classList.remove('open');
+
+      scrollShow();
+    }
+  });
+
+  // Закрытие по нажатию клавиши Esc
+  document.addEventListener('keydown', function (e) {
+    if (e.code === 'Escape') {
+      modal.classList.remove('open');
+
+      scrollShow();
+    }
+  });
 })();

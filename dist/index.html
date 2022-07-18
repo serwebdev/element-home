@@ -102,7 +102,7 @@
                 <p class="intro__text">Дизайнерский талант мирового класса
                     в сочетании с высочайшим качеством
                 </p>
-                <button class="intro__btn btn">Заказать</button>
+                <a href="./catolog.html" class="intro__btn btn">Заказать</a>
             </div>
         </div>
     </section>
@@ -163,7 +163,7 @@
                             диваны</h3>
                         <p class="catalog__card-text">Lorem ipsum dolor sit amet,
                             consectetur adipiscing elit</p>
-                        <a href="" class="catalog__card-link">
+                        <a href="./product.html" class="catalog__card-link">
                             <span>В каталог</span>
                             <svg width="14" height="10" viewBox="0 0 14 10" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1002,6 +1002,42 @@
 
         </div>
     </div>
+
+    <!--modal-footer------------------------------------------------------ -->
+    <div class="modal modal-overlay modal-footer">
+        <div class="modal__body">
+            <button class="modal__btn">
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.6095 2.35671C16.1302 1.83601 16.1302 0.99179 15.6095 0.471091C15.0888 -0.0496083 14.2446 -0.0496083 13.7239 0.471091L8 6.19495L2.27614 0.471092C1.75544 -0.0496071 0.911223 -0.0496071 0.390524 0.471092C-0.130175 0.991791 -0.130175 1.83601 0.390524 2.35671L6.11438 8.08057L0.390524 13.8044C-0.130175 14.3251 -0.130175 15.1693 0.390524 15.69C0.911223 16.2107 1.75544 16.2107 2.27614 15.69L8 9.96619L13.7239 15.69C14.2446 16.2107 15.0888 16.2107 15.6095 15.69C16.1302 15.1693 16.1302 14.3251 15.6095 13.8044L9.88562 8.08057L15.6095 2.35671Z" />
+                </svg>
+            </button>
+            <div class="modal__content">
+                <div class="designer designer-catalog">
+                    <div class="designer__inner">
+                        <div class="designer__left">
+                            <h2 class="designer__title">Не можете определиться?</h2>
+                            <p class="designer__text">Оставьте свои контактные данные и наш менеджер свяжется с
+                                вами в ближайшее
+                                время</p>
+                            <form class="designer__form">
+                                <input type="text" name="name" class="designer__input designer__input-name"
+                                    placeholder="Имя">
+                                <input type="tel" name="phone" class="designer__input designer__input-phone"
+                                    placeholder="Телефон">
+                                <input type="text" name="email" class="designer__input designer__input-email"
+                                    placeholder="E-mail">
+                                <button type="submit" class="designer__btn btn">Отправить</button>
+                                <p class="designer__agree">Оставляя заявку, вы принимаете условия <a href="#">соглашения
+                                        об
+                                        обработке персональных данных</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /modal-footer -->
 </footer>
 
     <script src="js/libs.min.js"></script>

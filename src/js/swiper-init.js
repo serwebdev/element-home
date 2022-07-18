@@ -165,15 +165,6 @@ const swiper2 = new Swiper('.reviews__slider', {
 
 // production__slider ===========================================================
 (function () {
-  // const productionSlider = document.querySelector('.production__slider');
-  // const productionSliderWrapper = document.querySelector(
-  //   '.production__slider-wrapper'
-  // );
-  // const productionSliderItem = document.querySelectorAll(
-  //   '.production__slider-item'
-  // );
-
-  const initSwiper3 = false;
   const mediaQuerySize = 900;
 
   const swiper3 = new Swiper('.production__slider', {
@@ -233,3 +224,181 @@ const swiper2 = new Swiper('.reviews__slider', {
     onOffSwiper3();
   });
 })();
+
+// card-one__slider1 ===========================================================
+(function () {
+  // card-one__slider2 ===========================================================
+  const swiperThumbs = new Swiper('.card-one__slider2', {
+    // Optional parameters
+    // Количество слайдов на просмотр (слайды, видимые одновременно в контейнере слайдера)
+    slidesPerView: 3,
+
+    // Установите количество слайдов, чтобы определить и включить групповое слайдирование. Полезно использовать со slidesPerView > 1
+    slidesPerGroup: 1,
+
+    // Расстояние между слайдами в px
+    spaceBetween: 24,
+
+    //   Установите, true чтобы включить режим непрерывного цикла
+    loop: true,
+
+    // Брейкпоинты (точки останова)
+    breakpoints: {
+      // when window width is >= 320px
+      // 320: {
+      //   slidesPerView: 1.4,
+      //   spaceBetween: 24,
+      // },
+      // 380: {
+      //   slidesPerView: 2,
+      //   spaceBetween: 24,
+      // },
+      // 560: {
+      //   slidesPerView: 3,
+      //   spaceBetween: 24,
+      // },
+      // // // when window width is >= 640px
+      // 750: {
+      //   slidesPerView: 4,
+      //   spaceBetween: 24,
+      // },
+      // 900: {
+      //   slidesPerView: 4,
+      //   spaceBetween: 40,
+      // },
+    },
+  });
+
+  const swiper4 = new Swiper('.card-one__slider1', {
+    // Optional parameters
+    // Количество слайдов на просмотр (слайды, видимые одновременно в контейнере слайдера)
+    slidesPerView: 1,
+
+    // Установите количество слайдов, чтобы определить и включить групповое слайдирование. Полезно использовать со slidesPerView > 1
+    slidesPerGroup: 1,
+
+    // Расстояние между слайдами в px
+    // spaceBetween: 40,
+
+    //   Установите, true чтобы включить режим непрерывного цикла
+    loop: true,
+
+    // Брейкпоинты (точки останова)
+    breakpoints: {
+      // when window width is >= 320px
+      // 320: {
+      //   slidesPerView: 1.4,
+      //   spaceBetween: 24,
+      // },
+      // 380: {
+      //   slidesPerView: 2,
+      //   spaceBetween: 24,
+      // },
+      // 560: {
+      //   slidesPerView: 3,
+      //   spaceBetween: 24,
+      // },
+      // // // when window width is >= 640px
+      // 750: {
+      //   slidesPerView: 4,
+      //   spaceBetween: 24,
+      // },
+      500: {
+        // slidesPerView: 4,
+        // spaceBetween: 40,
+        navigation: {
+          enabled: true,
+        },
+
+        pagination: {
+          enabled: false,
+        },
+      },
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      enabled: false,
+    },
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      enabled: true,
+    },
+
+    thumbs: {
+      swiper: swiperThumbs,
+    },
+  });
+})();
+
+// more-model__slide====================================================================
+const swiper5 = new Swiper('.more-model__slide', {
+  // Optional parameters
+  // Количество слайдов на просмотр (слайды, видимые одновременно в контейнере слайдера)
+  slidesPerView: 3,
+
+  // Установите количество слайдов, чтобы определить и включить групповое слайдирование. Полезно использовать со slidesPerView > 1
+  slidesPerGroup: 1,
+
+  // Расстояние между слайдами в px
+  spaceBetween: 40,
+
+  // Скорость перелистывания
+  speed: 300,
+
+  //   Установите, true чтобы включить режим непрерывного цикла
+  loop: true,
+
+  // Брейкпоинты (точки останова)
+  breakpoints: {
+    // when window width is >= 320px
+    // 320: {
+    //   slidesPerView: 1.2,
+    //   spaceBetween: 24,
+    // },
+    // 320: {
+    //   slidesPerView: 1.37,
+    //   spaceBetween: 24,
+    // },
+    // 500: {
+    //   slidesPerView: 2.3,
+    //   spaceBetween: 24,
+    // },
+    320: {
+      slidesPerView: 1.33,
+      spaceBetween: 24,
+    },
+    // // // when window width is >= 480px
+    500: {
+      slidesPerView: 1.7,
+      spaceBetween: 24,
+    },
+    // // when window width is >= 640px
+    650: {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    900: {
+      slidesPerView: 3,
+      spaceBetween: 40,
+    },
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    // Строка с типом разбиения на страницы. Может быть 'bullets', 'fraction' или 'progressbar' 'custom'
+    // type: "bullets",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});

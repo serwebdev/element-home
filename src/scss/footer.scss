@@ -154,3 +154,45 @@
     }
   }
 }
+
+// modal-footer===============================================
+.modal-footer {
+  bottom: 0;
+  height: auto;
+
+  .modal__body {
+    max-width: 460px;
+    height: auto;
+  }
+
+  .designer__left {
+    width: 100%;
+  }
+
+  .designer {
+    margin-top: 0px;
+  }
+
+  .designer__form {
+    margin-bottom: 0px;
+  }
+
+  .modal__btn {
+    font-size: 0;
+    line-height: 0;
+
+    svg {
+      fill: #bfbfbf;
+      transition: 0.2s;
+
+      &:hover {
+        fill: #929292;
+      }
+    }
+  }
+}
+
+.modal-footer.open {
+  transform: scale(1);
+  pointer-events: all;
+}
