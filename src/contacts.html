@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    @@include('_header.html',{
+    "headerClass": "",
+    })
+
+
+
+    <!-- breadcrumb------------------------------------------------------------------------- -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="/" class="breadcrumb__link">Главная</a>
+                </li>
+                <li class="breadcrumb__item">
+                    Контакты
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- contacts------------------------------------------------------------- -->
+    <section class="contacts">
+        <div class="container">
+            <div class="contacts__inner">
+                <div class="contacts__left">
+                    <h2 class="contacts__title h2">Контакты</h2>
+                    <ul class="contacts__left-list">
+                        <li class="contacts__left-item contacts__left-item--icon contacts__left-item--icon1">8 (800)
+                            800-80-80</li>
+                        <li class="contacts__left-item contacts__left-item--icon contacts__left-item--icon2">Москва,
+                            Петровка ул., 2 строение 2
+                        </li>
+                        <li class="contacts__left-item contacts__left-item--icon contacts__left-item--icon3">
+                            element@home.com</li>
+                        <li class="contacts__left-item contacts__left-socials">
+                            <a href="#" class="contacts__left-social-link">
+                                <img src="img/contacts/contacts-social-1.svg" alt="pinterest"
+                                    class="contacts__left-social-img">
+                            </a>
+                            <a href="#" class="contacts__left-social-link">
+                                <img src="img/contacts/contacts-social-2.svg" alt="facebook"
+                                    class="contacts__left-social-img">
+                            </a>
+                            <a href="#" class="contacts__left-social-link">
+                                <img src="img/contacts/contacts-social-3.svg" alt="instagram"
+                                    class="contacts__left-social-img">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contacts__right">
+                    <div class="designer__left">
+                        <h2 class="designer__title">Нужна наша консультация?</h2>
+                        <p class="designer__text">Оставьте свои контактные данные и наш менеджер свяжется с вами в
+                            ближайшее
+                            время</p>
+                        <form class="designer__form">
+                            <input type="text" name="name" class="designer__input designer__input-name"
+                                placeholder="Имя">
+                            <input type="tel" name="phone" class="designer__input designer__input-phone"
+                                placeholder="Телефон">
+                            <input type="text" name="email" class="designer__input designer__input-email"
+                                placeholder="E-mail">
+                            <button type="submit" class="designer__btn btn">Отправить</button>
+                            <p class="designer__agree">Оставляя заявку, вы принимаете условия <a href="#">соглашения об
+                                    обработке персональных данных</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Карта------------------------------------------------ -->
+    <div class="map-wrap">
+        <div class="map map-scope" style="position:relative;overflow:hidden;"><a
+                href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
+                style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a
+                href="https://yandex.ru/maps/213/moscow/geo/krasnaya_ploshchad/1520633025/?ll=37.681291%2C55.744453&utm_medium=mapframe&utm_source=maps&z=12.29"
+                style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты</a><iframe
+                src="https://yandex.ru/map-widget/v1/-/CCUNrExLGC" width="100%" height="650" frameborder="1"
+                allowfullscreen="true" style="position:relative;"></iframe></div>
+    </div>
+
+    <script>
+        const mapWrap = document.querySelector('.map-wrap');
+        const map = mapWrap.querySelector('.map');
+
+        mapWrap.addEventListener('click', function (e) {
+            map.classList.remove('map-scope');
+        })
+    </script>
+
+
+    @@include('_footer.html')
+
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+
+</html>

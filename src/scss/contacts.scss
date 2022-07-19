@@ -1,0 +1,142 @@
+.contacts {
+  margin-top: 40px;
+  margin-bottom: 120px;
+
+  @media (max-width: 500px) {
+    margin-top: 32px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1060px;
+
+    @media (max-width: 850px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @media (max-width: 500px) {
+      gap: 42px;
+    }
+  }
+
+  &__left,
+  &__right {
+    max-width: 460px;
+    width: 100%;
+  }
+  &__left {
+  }
+
+  &__title {
+    margin-bottom: 64px;
+
+    @media (max-width: 500px) {
+      font-size: 24px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__left-list {
+  }
+
+  &__left-item {
+    font-size: 20px;
+    line-height: 150%;
+    color: $black;
+    margin-bottom: 40px;
+
+    @media (max-width: 500px) {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__left-item--icon {
+    position: relative;
+    padding-left: 36px;
+
+    @media (max-width: 500px) {
+      padding-left: 30px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 28px;
+      height: 28px;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @media (max-width: 500px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__left-item--icon1 {
+    &::before {
+      background-image: url(../img/contacts/contacts-phone.svg);
+    }
+  }
+  &__left-item--icon2 {
+    &::before {
+      background-image: url(../img/contacts/contacts-location.svg);
+    }
+  }
+  &__left-item--icon3 {
+    &::before {
+      background-image: url(../img/contacts/contacts-mail.svg);
+    }
+  }
+
+  &__left-socials {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__left-social-link {
+    transition: 0.2s;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  &__left-social-img {
+  }
+
+  .designer__left {
+    width: auto;
+    padding: 0;
+    background-color: #fff;
+  }
+
+  .designer__title {
+    @media (max-width: 500px) {
+      font-size: 24px;
+      margin-bottom: 13px;
+    }
+  }
+
+  .designer__text {
+    @media (max-width: 500px) {
+      font-size: 16px;
+    }
+  }
+
+  &__right {
+  }
+}
+
+.map {
+}
+.map-scope {
+  pointer-events: none;
+}

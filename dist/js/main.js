@@ -181,7 +181,7 @@
 (function () {
   const footerBtn = document.querySelector('.footer__btn');
   const modalFooter = document.querySelector('.modal-footer');
-  const closeModal = document.querySelector('.modal__btn');
+  const closeModal = document.querySelector('.modal-footer .modal__btn');
   // const modalContent = document.querySelector('.modal__content');
 
   let clientWidth = document.documentElement.clientWidth;
@@ -693,6 +693,94 @@ const swiper5 = new Swiper('.more-model__slide', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+// reviews-reviews__slider ===========================================================
+(function () {
+  const swiper6 = new Swiper('.reviews-reviews__slider', {
+    // Optional parameters
+    // Количество слайдов на просмотр (слайды, видимые одновременно в контейнере слайдера)
+    slidesPerView: 6.55,
+
+    // Установите количество слайдов, чтобы определить и включить групповое слайдирование. Полезно использовать со slidesPerView > 1
+    slidesPerGroup: 1,
+
+    // Расстояние между слайдами в px
+    spaceBetween: 40,
+
+    // Скорость перелистывания
+    speed: 300,
+
+    //   Установите, true чтобы включить режим непрерывного цикла
+    loop: true,
+
+    // Брейкпоинты (точки останова)
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1.4,
+        spaceBetween: 16,
+      },
+      450: {
+        slidesPerView: 1.8,
+        spaceBetween: 16,
+      },
+      500: {
+        slidesPerView: 2,
+        spaceBetween: 16,
+      },
+      600: {
+        slidesPerView: 2.5,
+        spaceBetween: 16,
+      },
+      800: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+      },
+      1050: {
+        slidesPerView: 4,
+        spaceBetween: 24,
+      },
+    },
+
+    // enabled: false,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      // Строка с типом разбиения на страницы. Может быть 'bullets', 'fraction' или 'progressbar' 'custom'
+      // type: "bullets",
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  console.log(swiper6);
+
+  const mediaQuerySize = 900;
+
+  // function onOffSwiper6() {
+  //   if (document.documentElement.clientWidth < mediaQuerySize) {
+  //     swiper6.enable();
+  //     console.log('mobile');
+  //   } else {
+  //     swiper6.disable();
+  //     console.log('desktop');
+  //   }
+  // }
+
+  // onOffSwiper6();
+
+  // window.addEventListener('resize', () => {
+  //   onOffSwiper6();
+  // });
+
+  // swiper6.disable();
+})();
 
 
 

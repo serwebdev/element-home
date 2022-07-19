@@ -181,7 +181,7 @@
 (function () {
   const footerBtn = document.querySelector('.footer__btn');
   const modalFooter = document.querySelector('.modal-footer');
-  const closeModal = document.querySelector('.modal__btn');
+  const closeModal = document.querySelector('.modal-footer .modal__btn');
   // const modalContent = document.querySelector('.modal__content');
 
   let clientWidth = document.documentElement.clientWidth;
