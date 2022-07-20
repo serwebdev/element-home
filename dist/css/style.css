@@ -1584,6 +1584,10 @@ body {
   fill: #929292;
 }
 
+.modal-footer .modal__content {
+  max-height: 100vh;
+}
+
 .modal-footer.open {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
@@ -2142,6 +2146,7 @@ body {
   border-radius: 4px;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .modal-buying__cart-right-sub {

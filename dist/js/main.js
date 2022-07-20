@@ -86,10 +86,6 @@
     document.body.style.overflowY = '';
     document.body.style.paddingRight = '';
   }
-  console.log(
-    openModal.length,
-    document.querySelectorAll('.reviews__slider-slide').length
-  );
 
   // Открытие модального окна
   if (reviewsContent) {
@@ -287,6 +283,45 @@
       scrollShow();
     }
   });
+})();
+
+// Добавление товара в корзину
+(function () {
+  const cartMinus = document.querySelector('.modal-buying__cart-right-sub');
+  const cartPlus = document.querySelector('.modal-buying__cart-right-add');
+  const cartQuantity = document.querySelector(
+    '.modal-buying__cart-right-count'
+  );
+  const priceAll = document.querySelector('.modal-buying__cart-right-price');
+
+  const price = 120000;
+
+  let counter = 1;
+
+  if (cartMinus) {
+    cartMinus.addEventListener('click', () => {
+      if (counter <= 1) {
+        counter = 1;
+      } else {
+        counter--;
+      }
+      renderQuantityProduct(counter);
+      console.log(counter);
+    });
+  }
+
+  if (cartPlus) {
+    cartPlus.addEventListener('click', () => {
+      counter++;
+      renderQuantityProduct(counter);
+      console.log(counter);
+    });
+  }
+
+  function renderQuantityProduct(counter) {
+    cartQuantity.textContent = `${counter} шт.`;
+    priceAll.textContent = `${price * counter} руб.`;
+  }
 })();
 
 const swiper = new Swiper('.popular__slider', {
@@ -502,10 +537,8 @@ const swiper2 = new Swiper('.reviews__slider', {
   function onOffSwiper3() {
     if (document.documentElement.clientWidth < mediaQuerySize) {
       swiper3.enable();
-      console.log('mobile');
     } else {
       swiper3.disable();
-      console.log('desktop');
     }
   }
 
@@ -758,8 +791,6 @@ const swiper5 = new Swiper('.more-model__slide', {
       prevEl: '.swiper-button-prev',
     },
   });
-
-  console.log(swiper6);
 
   const mediaQuerySize = 900;
 

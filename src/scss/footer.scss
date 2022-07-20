@@ -190,6 +190,10 @@
       }
     }
   }
+
+  .modal__content {
+    max-height: 100vh;
+  }
 }
 
 .modal-footer.open {

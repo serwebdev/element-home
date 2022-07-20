@@ -211,10 +211,8 @@ const swiper2 = new Swiper('.reviews__slider', {
   function onOffSwiper3() {
     if (document.documentElement.clientWidth < mediaQuerySize) {
       swiper3.enable();
-      console.log('mobile');
     } else {
       swiper3.disable();
-      console.log('desktop');
     }
   }
 
@@ -467,8 +465,6 @@ const swiper5 = new Swiper('.more-model__slide', {
       prevEl: '.swiper-button-prev',
     },
   });
-
-  console.log(swiper6);
 
   const mediaQuerySize = 900;
 
