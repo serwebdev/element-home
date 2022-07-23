@@ -323,3 +323,46 @@
     priceAll.textContent = `${price * counter} руб.`;
   }
 })();
+
+// Переключение табов на странице catalog
+if (document.querySelectorAll('.filter__tabs-item')) {
+  const tabsItem = document.querySelectorAll('.filter__tabs-item');
+  const filterTitle = document.querySelector('.filter__title');
+  const cardProduct = document.querySelectorAll('.filter-cards__grid-item');
+
+  // Функция отрисовывает заголовок в баннере
+  function renderTitle(tabsItem, item) {
+    tabsItem.forEach(itemAll => {
+      itemAll.classList.remove('active');
+    });
+    item.classList.add('active');
+    filterTitle.textContent = item.textContent;
+  }
+
+  // Перебирает табы
+  tabsItem.forEach(item => {
+    // Клик по табу
+    item.addEventListener('click', () => {
+      renderTitle(tabsItem, item);
+
+      // Значение атрибута data-product
+      const dataTab = item.dataset.product;
+
+      // Если таб с названием "все", то всем карточкам добавляем класс active, иначе класс active добавляем карточкам с нужными атрибутами
+      if (item.classList.contains('filter__tabs-item--all')) {
+        cardProduct.forEach(card => {
+          card.classList.add('active');
+        });
+      } else {
+        // Перебирает карточки, находит нужные атрибуты и добавляет карточке класс active
+        cardProduct.forEach(card => {
+          if (Object.keys(card.dataset).includes(dataTab)) {
+            card.classList.add('active');
+          } else {
+            card.classList.remove('active');
+          }
+        });
+      }
+    });
+  });
+}

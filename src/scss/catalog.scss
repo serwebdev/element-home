@@ -38,7 +38,17 @@
     }
 
     &:hover {
-      opacity: 0.7;
+      color: $brown;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 1px;
+      background-color: $brown;
     }
   }
 
@@ -46,20 +56,9 @@
     color: $brown;
     cursor: auto;
 
-    &:hover {
-      opacity: 1;
-    }
-
     &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -3px;
-      height: 1px;
-      background-color: $brown;
-      opacity: 1;
-      transition: 0.8s;
+      width: 100%;
+      transition: 0.2s;
     }
   }
 
@@ -153,7 +152,7 @@
   &__grid-item {
     background-color: #fafafa;
     border-radius: 4px;
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 32px;
     height: 565px;
@@ -161,6 +160,10 @@
     @media (max-width: 700px) {
       height: 557px;
     }
+  }
+
+  &__grid-item.active {
+    display: flex;
   }
 
   &__grid-item:nth-child(4),
